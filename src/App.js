@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import registration from './registration';
-import summary from './summary';
+import Registration from './Registration';
+import Summary from './Summary';
 
 class App extends Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class App extends Component {
     this.state = {isShowRegister: true};
 
     this.handViewChangeRe = this.handViewChangeRe.bind(this);
+    this.handViewChangeSu = this.handViewChangeSu.bind(this);
   }
 
   handViewChangeRe() {
@@ -23,14 +24,16 @@ class App extends Component {
   }
 
   render() {
+    //var register =
+
     return (
       <div className='appContent'>
           <div className='topNav'>
-            <div className='navLeft'><a href="#" onClick="{handViewChangeRe}">Register</a></div>
-            <div className='navRight'><a href="#" onClick="{handViewChangeSu}">View Registions</a></div>
+            <div className='navLeft'><a href="#" onClick={this.handViewChangeRe}>Register</a></div>
+            <div className='navRight'><a href="#" onClick={this.handViewChangeSu}>View Registions</a></div>
           </div>
-          <div>
-            {this.state.isShowRegister ? <registration /> : <summary />}
+          <div className='content'>
+            {this.state.isShowRegister ? <Registration /> : <Summary />}
           </div>
       </div>
     );

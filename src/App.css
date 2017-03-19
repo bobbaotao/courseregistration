@@ -25,13 +25,16 @@
 
 .appContent {
   width:600px;
-  margin: auto 0;
+  margin: 10px auto;
   font-size: 13px;
+  display: block;
 }
 .topNav {
   width: 600px;
+  height: 13px;
   margin: 0;
   padding: 0;
+  display: block;
 }
 .navLeft {
   width: 200px;
@@ -46,4 +49,10 @@
 .title {
   margin: 10px auto;
   font-size: 18px;
+}
+.content {
+  width: 600px;
+  margin: 10px 0px 0px 0px;
+  padding: 0;
+  display: block;
 }

@@ -1,21 +1,18 @@
 import React, { Component } from 'react';
-import {
-  BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom';
+import './App.css';
 
-class summary extends Component {
+class Summary extends Component {
   constructor(props) {
     super(props);
-
+    console.log('xxx');
   }
 
   render() {
+    console.log('yyy');
       return (
-        <h2>summary</h2>
-      )
+        <a herf='#'>aaa </a>
+      );
   }
 }
 
-export default summary;
+export default Summary;
