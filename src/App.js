@@ -3,11 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import Registration from './Registration';
 import Summary from './Summary';
+var WebStorage = require('react-webstorage');
+
+const webstorageKey = 'bob_course';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {isShowRegister: true};
+    var webstorage = new WebStorage(window.localStorage || window.sessionStorage);
+    webstorage.clear(webstorageKey);
 
     this.handViewChangeRe = this.handViewChangeRe.bind(this);
     this.handViewChangeSu = this.handViewChangeSu.bind(this);
@@ -33,7 +38,7 @@ class App extends Component {
             <div className='navRight'><a href="#" onClick={this.handViewChangeSu}>View Registions</a></div>
           </div>
           <div className='content'>
-            {this.state.isShowRegister ? <Registration /> : <Summary />}
+            {this.state.isShowRegister ? <Registration webstorage={webstorageKey} /> : <Summary webstorage={webstorageKey} />}
           </div>
       </div>
     );
